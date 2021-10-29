@@ -14,7 +14,7 @@ RUN dpkg-divert --local --rename --add /sbin/udevadm && ln -s /bin/true /sbin/ud
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
-        curl ca-certificates xz \
+        curl ca-certificates xz-utils \
     && rm -f /usr/bin/gs
 
 RUN groupadd -g 1000 app
