@@ -1,0 +1,8 @@
+repo: https://github.com/defn/remote-tmux-gpg
+revision: master
+version: master
+variant: ""
+
+base_dockerfile: Dockerfile
+base_source: "ubuntu:focal"
+base_destination: "k3d-hub.defn.ooo:5000/defn/remote-tmux-gpg:base"
