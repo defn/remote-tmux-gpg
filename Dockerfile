@@ -7,6 +7,6 @@ RUN nix-channel --update
 
 RUN nix-build -A pythonFull '<nixpkgs>'
 
-RUN id -a
+RUN id
 RUN which python
 RUN python --version

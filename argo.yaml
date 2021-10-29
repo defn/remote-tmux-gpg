@@ -51,6 +51,8 @@ spec:
           - "--context=/src"
           - "--dockerfile={{inputs.parameters.dockerfile}}"
           - "--destination={{inputs.parameters.destination}}"
+          - "--cache"
+          - "--cache-copy-layers"
           - "--build-arg"
           - "IMAGE={{inputs.parameters.source}}"
           - "--insecure"
