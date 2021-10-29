@@ -7,7 +7,7 @@ USER root
 ENV HOME=/root
 ENV USER=root
 
-RUN apk update && apk add curl ca-certificates xz-utils bash
+RUN apk update && apk add curl ca-certificates xz bash
 
 RUN addgroup -g 1000 app
 RUN adduser -u 1000 -h /home/app -s /bin/bash -G app -D app
