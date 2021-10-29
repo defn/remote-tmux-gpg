@@ -9,7 +9,6 @@ RUN nix-env -i tmux
 RUN nix-env -i gnupg
 RUN nix-env -i openssh
 RUN nix-env -i bash
-RUN nix-env -i python310
 
 ENTRYPOINT [ "/service" ]
 
