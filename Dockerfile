@@ -6,20 +6,11 @@ USER root
 
 ENV HOME=/root
 ENV USER=root
-ENV DEBIAN_FRONTEND=noninteractive
-ENV container docker
 
-RUN dpkg-divert --local --rename --add /sbin/udevadm && ln -s /bin/true /sbin/udevadm
+RUN apk update && apk add curl ca-certificates xz-utils bash
 
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends \
-        ca-certificates xz-utils \
-    && rm -f /usr/bin/gs
-
-RUN groupadd -g 1000 app
-RUN useradd -u 1000 -d /home/app -s /bin/bash -g app -M app
-RUN usermod app -a -G sudo
+RUN addgroup -g 1000 app
+RUN adduser -u 1000 -h /home/app -s /bin/bash -G app -D app
 RUN install -d -m 0700 -o app -g app /home/app
 
 USER app
