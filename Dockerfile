@@ -23,4 +23,4 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 COPY --chown=app:app etc/nix-install .
-RUN bash nix-install –-no-daemon && rm -f nix-install
+RUN chmod 755 nix-install && ./nix-install –-no-daemon && rm -f nix-install
