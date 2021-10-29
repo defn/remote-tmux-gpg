@@ -31,4 +31,4 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN bash <(curl -L https://nixos.org/nix/install) –no-daemon
+RUN curl -sSL -o nix-install https://nixos.org/nix/install && bash nix-install –no-daemon && rm -f nix-install
