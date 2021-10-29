@@ -14,7 +14,7 @@ RUN dpkg-divert --local --rename --add /sbin/udevadm && ln -s /bin/true /sbin/ud
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
-        curl ca-certificates xz-utils \
+        ca-certificates xz-utils \
     && rm -f /usr/bin/gs
 
 RUN groupadd -g 1000 app
@@ -31,4 +31,5 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN curl -sSL -o nix-install https://nixos.org/nix/install && bash nix-install –no-daemon && rm -f nix-install
+RUN copy etc/nix-install .
+RUN bash nix-install –-no-daemon && rm -f nix-install
