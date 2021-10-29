@@ -10,3 +10,5 @@ RUN nix-env -i gnupg
 RUN nix-env -i openssh
 
 ENTRYPOINT [ "/service" ]
+
+COPY service /service
