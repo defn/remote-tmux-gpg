@@ -12,6 +12,7 @@ RUN apk update && apk add curl ca-certificates xz bash
 RUN addgroup -g 1000 app
 RUN adduser -u 1000 -h /home/app -s /bin/bash -G app -D app
 RUN install -d -m 0700 -o app -g app /home/app
+RUN install -d -m 0700 -o app -g app /nix
 
 USER app
 WORKDIR /home/app
