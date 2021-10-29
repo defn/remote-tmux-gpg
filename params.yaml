@@ -4,5 +4,5 @@ version: master
 variant: ""
 
 base_dockerfile: Dockerfile
-base_source: "ubuntu:focal"
+base_source: "alpine:3.14.2"
 base_destination: "k3d-hub.defn.ooo:5000/defn/remote-tmux-gpg:base"
