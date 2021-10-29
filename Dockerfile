@@ -8,3 +8,5 @@ RUN nix-channel --update
 RUN nix-env -i tmux
 RUN nix-env -i gnupg
 RUN nix-env -i openssh
+
+ENTRYPOINT [ "/service" ]

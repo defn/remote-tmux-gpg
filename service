@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+function main {
+  set -x
+
+  local cmd_sshd="$(which sshd)"
+  exec "${cmd_sshd}" -D -o UseDNS=no -o UsePAM=yes -o PasswordAuthentication=no -e
+}
+
+main "$@"
